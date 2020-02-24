@@ -268,6 +268,11 @@ optional members.
         In a multi-process setup, it may be useful to observe the CID
         lifecycle.  This optional set of callbacks makes it possible.
 
+    .. member:: const char                          *ea_alpn
+
+        The optional ALPN string is used by the client :macro:`LSENG_HTTP`
+        is not set.
+
 Engine Settings
 ---------------
 
