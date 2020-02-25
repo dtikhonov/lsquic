@@ -21,6 +21,7 @@ main (void)
     api.ea_settings = &settings;
     api.ea_packets_out = (void *) (uintptr_t) 1;
     api.ea_stream_if = (void *) (uintptr_t) 2;
+    api.ea_get_ssl_ctx = (void *) (uintptr_t) 3;
 
     engine = lsquic_engine_new(flags, &api);
     assert(engine);
