@@ -478,6 +478,12 @@ lsquic_engine_new (unsigned flags,
         return NULL;
     }
 
+    if ((flags & LSENG_SERVER) && !api->ea_get_ssl_ctx)
+    {
+        LSQ_ERROR("get SSL_CTX callback is not specified");
+        return NULL;
+    }
+
     if (!(flags & LSENG_HTTP) && api->ea_alpn)
     {
         alpn_len = strlen(api->ea_alpn);
